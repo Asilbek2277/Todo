@@ -12,7 +12,21 @@ def hamma_talabalar(request):
 
 def Hamma_rejalar(request):
 
+    if request.method=="POST":
+        if request.POST.get("bajaril")=="on":
+            n=True
+        else:
+            n=False
+        Rejalar.objects.create(
+            sarlavha=request.POST.get("sar"),
+            sana=request.POST.get("sana"),
+            batafsil_malumot=request.POST.get("b_m"),
+            bajarilgan=n,
+            Student=Student.objects.get(id=request.POST.get("student")),
+        )
+
     data={
+        "students": Student.objects.all(),
         "rejalar": Rejalar.objects.all()
     }
     return render(request, "Rejalar.html", data)

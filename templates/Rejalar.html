@@ -13,6 +13,18 @@
         </li>
     </ul>
 {%endfor%}
+    <form method="post">{% csrf_token%}
+        <input name="sar" type="text">
+        <input name="sana" type="date">
+        <input name="b_m" type="text">
+        <label>bajarilganmi</label>
+        <input name="bajaril" type="checkbox">
+        <select name="student">
+            {%for i in students%}
+            <option>{{i.ism}} </option>
+            {%endfor%}
+        </select>
 
+    </form>
 </body>
 </html>
