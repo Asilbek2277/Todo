@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reja</title>
+</head>
+<body>
+<h1>Hamma rejalar</h1>
+    {%for i in rejalar%}
+    <ul>
+        <li>
+            {{i.sarlavha}}  <a href="/rejani_ochir/{{i.id}}/"><button>Delete</button></a>
+        </li>
+    </ul>
+{%endfor%}
+
+</body>
+</html>
